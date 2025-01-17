@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Country } from "../_types/types";
 import { removeDuplicates } from "@/utils/helpers";
-import { motion } from "framer-motion";
 import CountryCard from "./CountryCard";
 import RegionSelect from "./RegionSelect";
 import SearchCountry from "./SearchCountry";
