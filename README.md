@@ -25,7 +25,8 @@ email: test@countriesdb.com \
 p/w: test123
 
 ## Contact
-Mark Slorach - hello@markslorach.com
+Email: hello@markslorach.com \
+Website: www.markslorach.com
 
 ## Screenshots
 ![SCR-20240818-lczy](https://github.com/user-attachments/assets/fbae917d-81e0-4b99-a683-5681675ec977)
