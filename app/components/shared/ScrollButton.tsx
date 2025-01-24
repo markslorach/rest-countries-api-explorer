@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { ChevronUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const ScrollButton = () => {
   const [visible, setVisible] = useState(false);
@@ -31,14 +30,14 @@ const ScrollButton = () => {
   }, []);
 
   return (
-    <Button
-      className={`shadow-sm rounded-full fixed sm:bottom-10 sm:right-10 bottom-4 right-4 p-0 h-10 w-10 ${
+    <button
+      className={`shadow-sm opacity-90 bg-black/60 sm:bg-black sm:opacity-50 sm:hover:opacity-70 transition-opacity duration-300 rounded-full fixed sm:bottom-24 sm:right-10 bottom-24 right-4 p-2.5 ${
         visible ? "" : "hidden"
       }`}
       onClick={scrollToTop}
     >
-      <ChevronUp />
-    </Button>
+      <ChevronUp className="text-white" />
+    </button>
   );
 };
 
