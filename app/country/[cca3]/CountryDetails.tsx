@@ -23,6 +23,7 @@ const CountryDetails = async ({ userId, country, isFavourite }: Props) => {
     : { name: "n/a", symbol: "" };
 
   let borderCountries = [];
+  
   if (country.borders) {
     borderCountries = await Promise.all(
       country.borders.map(async (border) => {
