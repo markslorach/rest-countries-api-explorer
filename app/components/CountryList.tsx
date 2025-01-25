@@ -64,7 +64,7 @@ const CountryList = ({ data, removeFavourite, countries, userId }: Props) => {
           onClick={() =>
             setSortDirection((prev) => (prev === "asc" ? "desc" : "asc"))
           }
-          className="px-4 py-2 flex items-center gap-2 text-sm font-medium transform active:scale-95 rounded-md sm:hover:shadow-sm hover:bg-gray-100 transition-colors"
+          className="px-4 py-2 flex items-center gap-2 text-sm font-medium transform active:scale-95 rounded-md sm:hover:shadow-sm sm:hover:bg-gray-100 transition-colors"
         >
           <ArrowUpDown className="w-4 h-4" />
           {sortDirection === "asc" ? "A - Z" : "Z - A"}
