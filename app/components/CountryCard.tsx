@@ -29,7 +29,7 @@ const CountryCard = ({
 
   return (
     <Link href={`/country/${country.cca3}`}>
-      <article className="p-5 rounded-lg shadow-sm bg-white dark:bg-gray-700 space-y-7 border border-gray-300/50 dark:border-gray-500/50 md:hover:scale-[102%] duration-300 ease-in-out transition-transform">
+      <article className="p-4 rounded-lg shadow-sm bg-white dark:bg-gray-700 space-y-7 border border-gray-300/50 dark:border-gray-500/50 md:hover:scale-[102%] duration-300 ease-in-out transition-transform">
         <AspectRatio ratio={16 / 9}>
           <Image
             width={300}

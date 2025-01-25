@@ -1,8 +1,9 @@
 "use client";
 import { Country } from "@/app/_types/types";
 import { removeFavouriteCountryAction } from "@/app/actions/actions";
-import { StarIcon as StarOutline } from "@heroicons/react/24/outline";
-import { StarIcon as StarSolid } from "@heroicons/react/24/solid";
+import { Button } from "@/components/ui/button";
+import { BookmarkIcon as BookmarkOutline } from "@heroicons/react/24/outline";
+import { BookmarkIcon as BookmarkSolid } from "@heroicons/react/24/solid";
 import { useState } from "react";
 
 type Props = {
@@ -26,19 +27,21 @@ const RemoveFavouriteForm = ({ removeFavourite, country }: Props) => {
 
   return (
     <form className="flex" action={action}>
-      <button
+      <Button
+        size="icon"
         type="submit"
         onClick={handleButtonClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        aria-label="Remove country from favourites"
+        aria-label="Add country to favourites"
+        className="transform active:scale-95 transition-transform shadow-sm bg-gray-50 hover:bg-gray-50"
       >
         {isHovered ? (
-          <StarOutline className="w-7 h-7 text-blue-500 transition-colors" />
+          <BookmarkOutline className="w-[22px] h-[22px] text-blue-500" strokeWidth={2} />
         ) : (
-          <StarSolid className="w-7 h-7 text-blue-500 transition-colors" />
+          <BookmarkSolid className="w-[22px] h-[22px] text-blue-500" />
         )}
-      </button>
+      </Button>
     </form>
   );
 };
