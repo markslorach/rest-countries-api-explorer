@@ -8,6 +8,7 @@ import SearchCountry from "./SearchCountry";
 import ScrollButton from "./shared/ScrollButton";
 import { usePathname } from "next/navigation";
 import { FavouriteCountry } from "@prisma/client";
+import { ArrowUpDown } from "lucide-react";
 
 type Props = {
   data: Country[];
@@ -19,19 +20,25 @@ type Props = {
 const CountryList = ({ data, removeFavourite, countries, userId }: Props) => {
   const [search, setSearch] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("all");
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
 
   const pathname = usePathname();
 
-  const filteredCountries = data.filter((country) => {
-    const searchMatch = country.name.common
-      .toLowerCase()
-      .includes(search.toLowerCase());
+  const filteredCountries = data
+    .filter((country) => {
+      const searchMatch = country.name.common
+        .toLowerCase()
+        .includes(search.toLowerCase());
 
-    const regionMatch =
-      selectedRegion === "all" ? true : country.region === selectedRegion;
+      const regionMatch =
+        selectedRegion === "all" ? true : country.region === selectedRegion;
 
-    return searchMatch && regionMatch;
-  });
+      return searchMatch && regionMatch;
+    })
+    .sort((a, b) => {
+      const comparison = a.name.common.localeCompare(b.name.common);
+      return sortDirection === "asc" ? comparison : -comparison;
+    });
 
   const uniqueRegions = removeDuplicates(data.map((country) => country.region));
 
@@ -47,11 +54,22 @@ const CountryList = ({ data, removeFavourite, countries, userId }: Props) => {
         />
       </div>
 
-      <h1 className="text-xl font-semibold mt-10 mb-5">
-        {pathname === "/favourite-countries"
-          ? "Favourite Countries"
-          : "Countries"}
-      </h1>
+      <div className="flex justify-between items-center mt-10 mb-5">
+        <h1 className="text-xl font-semibold">
+          {pathname === "/favourite-countries"
+            ? "Favourite Countries"
+            : "Countries"}
+        </h1>
+        <button
+          onClick={() =>
+            setSortDirection((prev) => (prev === "asc" ? "desc" : "asc"))
+          }
+          className="px-4 py-2 flex items-center gap-2 text-sm font-medium transform active:scale-95 rounded-md sm:hover:shadow-sm hover:bg-gray-100 transition-colors"
+        >
+          <ArrowUpDown className="w-4 h-4" />
+          {sortDirection === "asc" ? "A - Z" : "Z - A"}
+        </button>
+      </div>
 
       {!filteredCountries.length && (
         <>
