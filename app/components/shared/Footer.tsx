@@ -8,7 +8,7 @@ const Footer = () => {
         <span className="hidden md:inline">
           Built using the{" "}
           <Link
-            className="text-blue-500"
+            className="text-blue-500 underline underline-offset-2"
             href="https://restcountries.com/"
             target="_blank"
           >
