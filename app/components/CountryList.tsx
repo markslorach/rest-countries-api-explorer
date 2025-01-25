@@ -25,16 +25,15 @@ const CountryList = ({ data, removeFavourite, countries, userId }: Props) => {
   const pathname = usePathname();
 
   const filteredCountries = data
-    .filter((country) => {
-      const searchMatch = country.name.common
-        .toLowerCase()
-        .includes(search.toLowerCase());
-
-      const regionMatch =
-        selectedRegion === "all" ? true : country.region === selectedRegion;
-
-      return searchMatch && regionMatch;
-    })
+    // Filter by search
+    .filter((country) => 
+      country.name.common.toLowerCase().includes(search.toLowerCase())
+    )
+    // Filter by region
+    .filter((country) => 
+      selectedRegion === "all" || country.region === selectedRegion
+    )
+    // Sort by name
     .sort((a, b) => {
       const comparison = a.name.common.localeCompare(b.name.common);
       return sortDirection === "asc" ? comparison : -comparison;
