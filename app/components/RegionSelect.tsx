@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/select";
 
 type Props = {
-  selectedRegion: string; // Make these props optional
+  selectedRegion: string;
   setSelectedRegion: (region: string) => void;
   uniqueRegions: string[];
 };

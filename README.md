@@ -11,6 +11,7 @@ A ful-stack application to view information on the countries of the world. Based
 * View a list of all countries
 * Search for a country
 * Filter countries by region
+* Sort countries ascending or descending order
 * View more info about a country and its bordering countries
 * Optional user authentication
 * Logged in users can add countries to favourites
