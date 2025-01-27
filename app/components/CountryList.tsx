@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { Country } from "../_types/types";
-// import { removeDuplicates } from "@/utils/helpers";
 import CountryCard from "./CountryCard";
 import RegionSelect from "./RegionSelect";
 import SearchCountry from "./SearchCountry";
@@ -38,8 +37,6 @@ const CountryList = ({ data, removeFavourite, countries, userId }: Props) => {
       const comparison = a.name.common.localeCompare(b.name.common);
       return sortDirection === "asc" ? comparison : -comparison;
     });
-
-  // const uniqueRegions = removeDuplicates(data.map((country) => country.region));
 
   return (
     <div>
@@ -90,7 +87,7 @@ const CountryList = ({ data, removeFavourite, countries, userId }: Props) => {
           </li>
         ))}
       </ul>
-      <ScrollButton />
+      {/* <ScrollButton /> */}
     </div>
   );
 };

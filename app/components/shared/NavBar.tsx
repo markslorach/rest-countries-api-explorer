@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-// import ThemeToggle from "./ThemeToggle";
 import { GlobeAsiaAustraliaIcon } from "@heroicons/react/24/outline";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import UserDropdown from "../user/UserDropdown";
@@ -36,7 +35,6 @@ const NavBar = () => {
           <SignedIn>
             <UserDropdown name={user?.name ?? null} email={user?.email} />
           </SignedIn>
-          {/* <ThemeToggle /> */}
         </div>
       </div>
     </nav>
