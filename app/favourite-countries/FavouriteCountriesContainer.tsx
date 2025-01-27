@@ -37,10 +37,10 @@ const FavouriteCountriesContainer = ({ userId, favouriteCountries }: Props) => {
         </p>
       </SignedOut>
       <SignedIn>
-        <CountryList
+          <CountryList
           data={alphabeticalOrder(optimisticFavourites)}
-          removeFavourite={handleRemoveFavourite}
-        />
+            removeFavourite={handleRemoveFavourite}
+          />
       </SignedIn>
     </div>
   );
