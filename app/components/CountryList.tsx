@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Country } from "../_types/types";
-import { removeDuplicates } from "@/utils/helpers";
+// import { removeDuplicates } from "@/utils/helpers";
 import CountryCard from "./CountryCard";
 import RegionSelect from "./RegionSelect";
 import SearchCountry from "./SearchCountry";
@@ -39,7 +39,7 @@ const CountryList = ({ data, removeFavourite, countries, userId }: Props) => {
       return sortDirection === "asc" ? comparison : -comparison;
     });
 
-  const uniqueRegions = removeDuplicates(data.map((country) => country.region));
+  // const uniqueRegions = removeDuplicates(data.map((country) => country.region));
 
   return (
     <div>
@@ -49,7 +49,6 @@ const CountryList = ({ data, removeFavourite, countries, userId }: Props) => {
         <RegionSelect
           selectedRegion={selectedRegion}
           setSelectedRegion={setSelectedRegion}
-          uniqueRegions={uniqueRegions}
         />
       </div>
 
