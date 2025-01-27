@@ -14,12 +14,12 @@ export default async function CountryContainer() {
     <main>
       {error && <p>{error}</p>}
       {!error && (
-        <CountryList
+          <CountryList
           data={alphabeticalOrder(data as any)}
-          countries={countries}
-          userId={userId}
-        />
-      )}
+            countries={countries}
+            userId={userId}
+          />
+        )}
     </main>
   );
 }

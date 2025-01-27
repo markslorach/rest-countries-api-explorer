@@ -4,7 +4,6 @@ import { Country } from "../_types/types";
 import CountryCard from "./CountryCard";
 import RegionSelect from "./RegionSelect";
 import SearchCountry from "./SearchCountry";
-import ScrollButton from "./shared/ScrollButton";
 import { usePathname } from "next/navigation";
 import { FavouriteCountry } from "@prisma/client";
 import { ArrowUpDown } from "lucide-react";
@@ -34,9 +33,9 @@ const CountryList = ({ data, removeFavourite, countries, userId }: Props) => {
     )
     // Sort by name
     .sort((a, b) => {
-      const comparison = a.name.common.localeCompare(b.name.common);
-      return sortDirection === "asc" ? comparison : -comparison;
-    });
+    const comparison = a.name.common.localeCompare(b.name.common);
+    return sortDirection === "asc" ? comparison : -comparison;
+  });
 
   return (
     <div>
@@ -87,7 +86,6 @@ const CountryList = ({ data, removeFavourite, countries, userId }: Props) => {
           </li>
         ))}
       </ul>
-      {/* <ScrollButton /> */}
     </div>
   );
 };
