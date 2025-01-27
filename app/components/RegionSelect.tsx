@@ -6,18 +6,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { REGIONS } from "@/constants/constants";
 
 type Props = {
   selectedRegion: string;
   setSelectedRegion: (region: string) => void;
-  uniqueRegions: string[];
 };
 
-const RegionSelect = ({
-  selectedRegion = "all",
-  setSelectedRegion,
-  uniqueRegions,
-}: Props) => {
+const RegionSelect = ({ selectedRegion = "all", setSelectedRegion }: Props) => {
   return (
     <Select value={selectedRegion} onValueChange={setSelectedRegion}>
       <SelectTrigger className="md:w-52 h-14 px-5 shadow-sm dark:bg-gray-700 dark:border-gray-500/50">
@@ -26,7 +22,7 @@ const RegionSelect = ({
       <SelectContent>
         <SelectGroup>
           <SelectItem value="all">All Regions</SelectItem>
-          {uniqueRegions.sort().map((region, idx) => (
+          {REGIONS.sort().map((region, idx) => (
             <SelectItem key={idx} value={region}>
               {region}
             </SelectItem>
