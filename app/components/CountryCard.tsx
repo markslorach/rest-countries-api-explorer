@@ -7,6 +7,7 @@ import RemoveFavouriteForm from "./user/RemoveFavouriteForm";
 import { usePathname } from "next/navigation";
 import { FavouriteCountry } from "@prisma/client";
 import AddToFavourites from "./user/AddToFavouritesForm";
+import { Earth, MapPin, UsersRound } from "lucide-react";
 
 type Props = {
   country: Country;
@@ -29,7 +30,7 @@ const CountryCard = ({
 
   return (
     <Link href={`/country/${country.cca3}`}>
-      <article className="p-4 relative rounded-lg shadow-sm bg-white dark:bg-gray-700 space-y-7 border border-gray-300/50 dark:border-gray-500/50 md:hover:scale-[102%] duration-300 ease-in-out transition-transform">
+      <article className="p-4 relative rounded-lg shadow-sm bg-white dark:bg-gray-700 space-y-5 border border-gray-300/50 dark:border-gray-500/50 md:hover:scale-[102%] duration-300 ease-in-out transition-transform">
         <AspectRatio ratio={16 / 9}>
           <Image
             width={300}
@@ -41,25 +42,36 @@ const CountryCard = ({
         </AspectRatio>
 
         <div>
-          <h2 className="font-semibold text-lg line-clamp-1 mb-2.5">
+          <h2 className="font-semibold text-lg line-clamp-1 mb-4 leading-tight">
             {country.name.common}
           </h2>
 
-          <p className="mb-2">
-            <span className="font-semibold">Population:</span>{" "}
-            {country.population.toLocaleString()}
-          </p>
-
-          <p className="mb-1.5">
-            <span className="font-semibold">Region:</span> {country.region}
-          </p>
-
-          <p className="line-clamp-1 w-[80%]">
-            <span className="font-semibold">
+          <div className="line-clamp-1 w-[80%] mb-3 flex items-center gap-1 text-sm">
+            <span className="flex items-center gap-1 text-gray-600">
+              <MapPin className="w-4 h-4" />{" "}
               {country.capital?.length > 1 ? "Capitals:" : "Capital:"}
             </span>{" "}
-            {country.capital ? country.capital.join(", ") : "No Capital"}
-          </p>
+            <span className="font-medium">
+              {country.capital ? country.capital.join(", ") : "No Capital"}
+            </span>
+          </div>
+
+          <div className="mb-3 flex items-center gap-1 text-sm">
+            <span className="flex items-center gap-1 text-gray-600">
+              <UsersRound className="w-4 h-4" /> Population:
+            </span>{" "}
+            <span className="font-medium">
+              {country.population.toLocaleString()}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-1 text-sm">
+            <span className="flex items-center gap-1 text-gray-600">
+              <Earth className="w-4 h-4" /> Region:
+            </span>{" "}
+            <span className="font-medium">{country.region}</span>
+          </div>
+
           <div className="absolute bottom-4 right-4">
             {(pathname === "/favourite-countries" && (
               <RemoveFavouriteForm
