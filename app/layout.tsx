@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
-import NavBar from "./components/shared/navbar";
-import Footer from "./components/shared/footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import ScrollButton from "./components/shared/scroll-btn";
+import NavBar from "./components/shared/navbar";
+import Footer from "./components/shared/footer";
 
 const notoSans = Noto_Sans({ subsets: ["latin"] });
 
