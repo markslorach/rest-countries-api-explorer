@@ -1,7 +1,7 @@
 import prisma from "@/prisma/client";
 import { currentUser } from "@clerk/nextjs/server";
 
-// Get logged in user from the db
+// Get logged in user from the db or create a new user if not found
 export async function getUser() {
   try {
     const clerkUser = await currentUser();
@@ -12,6 +12,12 @@ export async function getUser() {
     let user = await prisma.user.findUnique({
       where: { email },
     });
+
+    if (!user) {
+      user = await prisma.user.create({
+        data: { email, name: clerkUser?.firstName },
+      });
+    }
 
     return user;
   } catch (error) {
@@ -41,12 +47,6 @@ export async function addFavouriteCountry(countryCode: string) {
     const user = await getUser();
     if (!user) return { error: "User not found" };
 
-    const existingCountry = await prisma.favouriteCountry.findFirst({
-      where: { id: user.id, country: countryCode },
-    });
-
-    if (existingCountry) return { error: "Country already added" };
-
     const country = await prisma.favouriteCountry.create({
       data: { userId: user.id, country: countryCode },
     });
@@ -67,7 +67,7 @@ export async function removeFavouriteCountry(countryCode: string) {
       where: { userId: user.id, country: countryCode },
     });
 
-    if (!existingCountry) return { error: "Country not found" };
+    if (!existingCountry) return { error: "Country not found in database" };
 
     const country = await prisma.favouriteCountry.delete({
       where: {
