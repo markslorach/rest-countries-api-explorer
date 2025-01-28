@@ -42,7 +42,7 @@ const CountryCard = ({
         </AspectRatio>
 
         <div>
-          <h2 className="font-semibold text-lg line-clamp-1 mb-4 leading-tight">
+          <h2 className="font-semibold text-lg line-clamp-1 mb-3.5 leading-snug">
             {country.name.common}
           </h2>
 
