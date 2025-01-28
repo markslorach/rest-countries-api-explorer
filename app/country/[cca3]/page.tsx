@@ -1,9 +1,9 @@
-import { getCountry } from "@/lib/countries";
 import { Country } from "@/app/_types/types";
 import { notFound } from "next/navigation";
-import { getFavouriteCountries } from "@/lib/user";
 import { auth } from "@clerk/nextjs/server";
 import CountryDetails from "./country-details";
+import { getFavouriteCountries } from "@/server/lib/user";
+import { getCountry } from "@/server/lib/countries";
 
 const CountryPage = async ({ params }: { params: { cca3: string } }) => {
   const { userId } = auth();
