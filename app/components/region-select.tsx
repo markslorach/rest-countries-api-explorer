@@ -23,7 +23,11 @@ const RegionSelect = ({ selectedRegion = "all", setSelectedRegion }: Props) => {
         <SelectGroup>
           <SelectItem value="all">All Regions</SelectItem>
           {REGIONS.sort().map((region, idx) => (
-            <SelectItem key={idx} value={region}>
+            <SelectItem
+              key={idx}
+              value={region}
+              onClick={(e) => e.stopPropagation()}
+            >
               {region}
             </SelectItem>
           ))}
