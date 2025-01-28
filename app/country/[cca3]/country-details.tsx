@@ -39,7 +39,7 @@ const CountryDetails = async ({ userId, country, isFavourite }: Props) => {
 
       <section className="grid md:grid-cols-2 gap-10 md:gap-20 mt-10">
         <img
-          className="object-cover w-full rounded-lg shadow-sm col-span-1"
+          className="object-cover w-full rounded-md shadow-sm col-span-1"
           src={country.flags.png}
           alt={country.name.common}
         />
@@ -117,7 +117,7 @@ const CountryDetails = async ({ userId, country, isFavourite }: Props) => {
                 >
                   <Button
                     variant="outline"
-                    className="shadow-sm rounded-lg px-3 dark:bg-gray-700 dark:border-gray-500/50"
+                    className="shadow-sm px-3 dark:bg-gray-700 dark:border-gray-500/50"
                   >
                     {borderCountry.name.common}
                   </Button>
