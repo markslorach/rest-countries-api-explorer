@@ -46,12 +46,12 @@ const CountryCard = ({
             {country.name.common}
           </h2>
 
-          <div className="line-clamp-1 w-[80%] mb-3 flex items-center gap-1 text-sm">
+          <div className="w-[80%] mb-3 flex items-center gap-1 text-sm">
             <span className="flex items-center gap-1 text-gray-600">
               <MapPin className="w-4 h-4" />{" "}
               {country.capital?.length > 1 ? "Capitals:" : "Capital:"}
             </span>{" "}
-            <span className="font-medium">
+            <span className="font-medium line-clamp-1">
               {country.capital ? country.capital.join(", ") : "No Capital"}
             </span>
           </div>
