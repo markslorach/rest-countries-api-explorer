@@ -9,7 +9,6 @@ import { LogIn } from "lucide-react";
 import { User } from "@prisma/client";
 
 const NavBar = () => {
-
   const { user } = useFetchUser() as { user: User | null };
 
   return (
@@ -26,7 +25,7 @@ const NavBar = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className=" dark:bg-gray-700 dark:border-gray-500/50"
+                className="dark:bg-gray-700 dark:border-gray-500/50 hover:bg-white sm:hover:bg-gray-100"
               >
                 <LogIn className="w-6 h-6" />
               </Button>

@@ -11,15 +11,19 @@ import { SignOutButton } from "../shared/sign-out-btn";
 import { UserRound } from "lucide-react";
 
 type Props = {
-  name: string | null,
-  email: string | undefined
-} ;
+  name: string | null;
+  email: string | undefined;
+};
 
 export default function UserDropdown({ name, email }: Props) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="dark:bg-transparent">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="dark:bg-transparent hover:bg-white sm:hover:bg-gray-100"
+        >
           <UserRound className="h-6 w-6" />
         </Button>
       </DropdownMenuTrigger>
