@@ -13,3 +13,8 @@ dd {
 .cl-internal-1dauvpw {
     @apply hidden
 }
+
+@layer base {
+  :root {
+  
+        --radius: 0.5rem}}

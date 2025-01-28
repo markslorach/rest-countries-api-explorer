@@ -12,7 +12,7 @@ const CountryListSkeleton = () => {
         {[...Array(12)].map((_, index) => (
           <div
             key={index}
-            className="bg-gray-200 dark:bg-gray-700 space-y-7 rounded-lg shadow-sm animate-pulse p-5"
+            className="bg-gray-200 min-h-[336px] max-h-[336px] dark:bg-gray-700 space-y-7 rounded-lg shadow-sm animate-pulse p-4"
           >
             <div className="bg-gray-300 dark:bg-gray-600 aspect-video rounded-lg animate-pulse"></div>
             <div>
@@ -21,7 +21,7 @@ const CountryListSkeleton = () => {
                 {[...Array(3)].map((_, index) => (
                   <div
                     key={index}
-                    className="h-6 w-3/4 rounded-lg animate-pulse bg-gray-300 dark:bg-gray-600"
+                    className="h-5 w-3/4 rounded-lg animate-pulse bg-gray-300 dark:bg-gray-600"
                   ></div>
                 ))}
               </div>

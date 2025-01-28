@@ -1,7 +1,7 @@
 "use client";
 import { Country } from "@/app/_types/types";
-import { removeFavouriteCountryAction } from "@/app/actions/actions";
 import { Button } from "@/components/ui/button";
+import { removeFavouriteCountryAction } from "@/server/actions/actions";
 import { BookmarkIcon as BookmarkOutline } from "@heroicons/react/24/outline";
 import { BookmarkIcon as BookmarkSolid } from "@heroicons/react/24/solid";
 import { useState } from "react";

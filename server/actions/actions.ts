@@ -1,5 +1,5 @@
 "use server";
-import { addFavouriteCountry, removeFavouriteCountry } from "@/lib/user";
+import { addFavouriteCountry, removeFavouriteCountry } from "@/server/lib/user";
 import { revalidatePath } from "next/cache";
 
 export async function addFavouriteCountryAction(countryCode: string) {

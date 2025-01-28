@@ -9,7 +9,7 @@ import Link from "next/link";
 import { SignOutButton } from "../shared/sign-out-btn";
 
 import UserButton from "./user-btn";
-import { getUser } from "@/lib/user";
+import { getUser } from "@/server/lib/user";
 
 export default async function UserDropdown() {
   const user = await getUser();

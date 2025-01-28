@@ -1,7 +1,7 @@
-import { getCountries } from "@/lib/countries";
+import { getCountries } from "@/server/lib/countries";
 import { alphabeticalOrder } from "@/utils/helpers";
 import CountryList from "./components/country-list";
-import { getFavouriteCountries } from "@/lib/user";
+import { getFavouriteCountries } from "@/server/lib/user";
 import { auth } from "@clerk/nextjs/server";
 
 export default async function CountryContainer() {

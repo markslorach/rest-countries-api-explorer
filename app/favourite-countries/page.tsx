@@ -1,5 +1,5 @@
-import { getCountry } from "@/lib/countries";
-import { getFavouriteCountries } from "@/lib/user";
+import { getCountry } from "@/server/lib/countries";
+import { getFavouriteCountries } from "@/server/lib/user";
 import { auth } from "@clerk/nextjs/server";
 import FavouriteCountriesContainer from "./favourite-countries-contrainer";
 
