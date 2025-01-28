@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { GlobeAsiaAustraliaIcon } from "@heroicons/react/24/outline";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
-import UserDropdown from "../user/user-dropdown";
+import UserDropdown from "./user/user-dropdown";
 import { Button } from "@/components/ui/button";
 import { LogIn } from "lucide-react";
 import { Suspense } from "react";
-import UserButton from "../user/user-btn";
+import UserButton from "./user/user-btn";
 
 const NavBar = () => {
   return (
