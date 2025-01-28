@@ -1,16 +1,13 @@
-"use client";
 import Link from "next/link";
 import { GlobeAsiaAustraliaIcon } from "@heroicons/react/24/outline";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import UserDropdown from "../user/user-dropdown";
-import { useFetchUser } from "@/app/hooks/useFetchUser";
 import { Button } from "@/components/ui/button";
 import { LogIn } from "lucide-react";
-import { User } from "@prisma/client";
+import { Suspense } from "react";
+import UserButton from "../user/user-btn";
 
 const NavBar = () => {
-  const { user } = useFetchUser() as { user: User | null };
-
   return (
     <nav className="h-20 border-b border-gray-300/50 dark:border-gray-500/50 shadow-sm bg-white dark:bg-gray-700">
       <div className="px-4 md:container flex h-full items-center justify-between">
@@ -32,7 +29,9 @@ const NavBar = () => {
             </SignInButton>
           </SignedOut>
           <SignedIn>
-            <UserDropdown name={user?.name ?? null} email={user?.email} />
+            <Suspense fallback={<UserButton color="text-gray-500" />}>
+              <UserDropdown />
+            </Suspense>
           </SignedIn>
         </div>
       </div>
