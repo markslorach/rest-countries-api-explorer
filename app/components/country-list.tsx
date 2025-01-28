@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import { Country } from "../_types/types";
-import CountryCard from "./CountryCard";
-import RegionSelect from "./RegionSelect";
-import SearchCountry from "./SearchCountry";
+import CountryCard from "./country-card";
+import RegionSelect from "./region-select";
+import SearchCountry from "./country-search";
 import { usePathname } from "next/navigation";
 import { FavouriteCountry } from "@prisma/client";
 import { ArrowUpDown } from "lucide-react";

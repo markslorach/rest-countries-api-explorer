@@ -3,9 +3,9 @@ import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { alphabeticalOrder } from "@/utils/helpers";
 import { Country } from "../_types/types";
 import { useOptimistic } from "react";
-import CountryList from "../components/CountryList";
+import CountryList from "../components/country-list";
 import Link from "next/link";
-import HomeButton from "../components/shared/HomeButton";
+import HomeButton from "../components/shared/home-btn";
 
 type Props = {
   userId: string | null;

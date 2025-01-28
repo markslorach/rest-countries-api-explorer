@@ -1,4 +1,4 @@
-import BackButton from "../shared/BackButton";
+import BackButton from "../shared/back-btn";
 
 const CountryDetailSkeleton = () => {
   return (

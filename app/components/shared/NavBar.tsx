@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { GlobeAsiaAustraliaIcon } from "@heroicons/react/24/outline";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
-import UserDropdown from "../user/UserDropdown";
+import UserDropdown from "../user/user-dropdown";
 import { useFetchUser } from "@/app/hooks/useFetchUser";
 import { Button } from "@/components/ui/button";
 import { LogIn } from "lucide-react";

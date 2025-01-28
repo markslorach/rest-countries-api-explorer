@@ -1,4 +1,4 @@
-import HomeButton from "./components/shared/HomeButton";
+import HomeButton from "./components/shared/home-btn";
 
 const NotFound = () => {
   return (

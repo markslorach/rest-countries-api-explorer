@@ -1,6 +1,6 @@
 import { getCountries } from "@/lib/countries";
 import { alphabeticalOrder } from "@/utils/helpers";
-import CountryList from "./components/CountryList";
+import CountryList from "./components/country-list";
 import { getFavouriteCountries } from "@/lib/user";
 import { auth } from "@clerk/nextjs/server";
 

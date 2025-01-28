@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { SignOutButton } from "../shared/SignOutButton";
+import { SignOutButton } from "../shared/sign-out-btn";
 import { UserRound } from "lucide-react";
 
 type Props = {

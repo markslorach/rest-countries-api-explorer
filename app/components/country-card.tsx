@@ -3,10 +3,10 @@ import Link from "next/link";
 import { Country } from "../_types/types";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
-import RemoveFavouriteForm from "./user/RemoveFavouriteForm";
+import RemoveFavouriteForm from "./user/remove-from-favourites-form";
 import { usePathname } from "next/navigation";
 import { FavouriteCountry } from "@prisma/client";
-import AddToFavourites from "./user/AddToFavouritesForm";
+import AddToFavourites from "./user/add-to-favourites-form";
 import { Earth, MapPin, UsersRound } from "lucide-react";
 
 type Props = {

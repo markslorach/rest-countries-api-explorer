@@ -1,7 +1,7 @@
 import { getCountry } from "@/lib/countries";
 import { getFavouriteCountries } from "@/lib/user";
 import { auth } from "@clerk/nextjs/server";
-import FavouriteCountriesContainer from "./FavouriteCountriesContainer";
+import FavouriteCountriesContainer from "./favourite-countries-contrainer";
 
 const FavouriteCountriesPage = async () => {
   const { userId } = auth();
