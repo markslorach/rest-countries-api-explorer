@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { getCountry } from "@/server/lib/countries";
 import { FavouriteCountry } from "@prisma/client";
-import { Country } from "@/app/_types/types";
+import { Country } from "@/app/types/types";
 import BackButton from "@/app/components/shared/back-btn";
 import AddToFavourites from "@/app/components/user/add-to-favourites-form";
 

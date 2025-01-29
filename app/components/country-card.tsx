@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Country } from "../_types/types";
+import { Country } from "../types/types";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
 import RemoveFavouriteForm from "./user/remove-from-favourites-form";

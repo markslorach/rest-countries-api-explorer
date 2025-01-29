@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Country } from "../_types/types";
+import { Country } from "../types/types";
 import CountryCard from "./country-card";
 import RegionSelect from "./region-select";
 import SearchCountry from "./country-search";

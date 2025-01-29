@@ -1,4 +1,4 @@
-import { Country } from "@/app/_types/types";
+import { Country } from "@/app/types/types";
 import { notFound } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 import CountryDetails from "./country-details";

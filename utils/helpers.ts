@@ -1,4 +1,4 @@
-import { Country } from "@/app/_types/types";
+import { Country } from "@/app/types/types";
 
 export function removeDuplicates(arr: string[]) {
   return arr.filter((item, index) => arr.indexOf(item) === index);

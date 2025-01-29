@@ -1,7 +1,7 @@
 "use client";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { alphabeticalOrder } from "@/utils/helpers";
-import { Country } from "../_types/types";
+import { Country } from "../types/types";
 import { useOptimistic } from "react";
 import CountryList from "../components/country-list";
 import Link from "next/link";
