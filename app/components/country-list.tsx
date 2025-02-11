@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useQueryState } from "nuqs";
 import { Country } from "../types/types";
 import CountryCard from "./country-card";
 import RegionSelect from "./region-select";
@@ -7,6 +7,7 @@ import SearchCountry from "./country-search";
 import { usePathname } from "next/navigation";
 import { FavouriteCountry } from "@prisma/client";
 import { ArrowUpDown } from "lucide-react";
+import { parseAsString, parseAsStringLiteral } from "nuqs";
 
 type Props = {
   data: Country[];
@@ -16,9 +17,12 @@ type Props = {
 };
 
 const CountryList = ({ data, removeFavourite, countries, userId }: Props) => {
-  const [search, setSearch] = useState("");
-  const [selectedRegion, setSelectedRegion] = useState("all");
-  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
+  const [search, setSearch] = useQueryState('search', parseAsString.withDefault(""));
+  const [selectedRegion, setSelectedRegion] = useQueryState('region', parseAsString.withDefault("all"));
+  const [sortDirection, setSortDirection] = useQueryState(
+    'sort',
+    parseAsStringLiteral(['asc', 'desc']).withDefault("asc")
+  );
 
   const pathname = usePathname();
 
@@ -40,10 +44,10 @@ const CountryList = ({ data, removeFavourite, countries, userId }: Props) => {
   return (
     <div>
       <div className="flex flex-wrap md:flex-nowrap justify-between gap-5">
-        <SearchCountry search={search} setSearch={setSearch} />
+        <SearchCountry search={search || ""} setSearch={setSearch} />
 
         <RegionSelect
-          selectedRegion={selectedRegion}
+          selectedRegion={selectedRegion || "all"}
           setSelectedRegion={setSelectedRegion}
         />
       </div>

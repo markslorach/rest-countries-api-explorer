@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import ScrollButton from "./components/shared/scroll-btn";
 import NavBar from "./components/shared/navbar";
 import Footer from "./components/shared/footer";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const notoSans = Noto_Sans({ subsets: ["latin"] });
 
@@ -24,7 +25,9 @@ export default function RootLayout({
         <body className={notoSans.className}>
           <main className="flex flex-col min-h-dvh md:min-h-screen">
             <NavBar />
-            <div className="px-4 md:container mt-10 flex-grow">{children}</div>
+            <div className="px-4 md:container mt-10 flex-grow">
+              <NuqsAdapter>{children}</NuqsAdapter>
+            </div>
             <ScrollButton />
             <Footer />
           </main>
